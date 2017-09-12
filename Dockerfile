@@ -58,8 +58,8 @@ RUN yum clean all
 EXPOSE \
     5060/udp \
     5061/tcp \
-    10001/tcp \
-    10001/udp
+    10000-10010/tcp \
+    10000-10010/udp
 
 # example scripts
 COPY sip.conf /etc/asterisk/sip.conf
