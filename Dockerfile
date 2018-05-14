@@ -67,3 +67,8 @@ COPY http.conf /etc/asterisk/http.conf
 COPY rtp.conf /etc/asterisk/rtp.conf
 COPY modules.conf /etc/asterisk/modules.conf
 COPY extensions.conf /etc/asterisk/extensions.conf
+
+# change external ip address
+COPY entrypoint.sh /
+RUN chmod +x /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
