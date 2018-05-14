@@ -66,3 +66,4 @@ COPY sip.conf /etc/asterisk/sip.conf
 COPY http.conf /etc/asterisk/http.conf
 COPY rtp.conf /etc/asterisk/rtp.conf
 COPY modules.conf /etc/asterisk/modules.conf
+COPY extensions.conf /etc/asterisk/extensions.conf
