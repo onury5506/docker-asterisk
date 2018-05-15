@@ -13,3 +13,10 @@ docker run -it \
     dialog/asterisk
 ```
 where `$EXTERN_IP` is the external ip of the machine.
+
+You will also need to create a certificate from inside the docker:
+```
+mkdir /etc/asterisk/keys
+cd asterisk-14.6.1/contrib/scripts/
+./ast_tls_cert -C sip.dialog.im -O "Dialog SIP" -d /etc/asterisk/keys
+```
