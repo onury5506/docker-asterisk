@@ -33,6 +33,7 @@ Try with https://www.doubango.org/sipml5/call.htm using
 
 ### Call control
 
+| Extension | result |
 | --- | --- |
 | 1000 | for welcome message |
 | 1001 | for echo |
