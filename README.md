@@ -14,7 +14,7 @@ docker run -it \
 ```
 where `$EXTERN_IP` is the external ip of the machine.
 
-You will also need to create a certificate from inside the docker:
+To create your own certificates
 ```
 mkdir /etc/asterisk/keys
 cd asterisk-14.6.1/contrib/scripts/
