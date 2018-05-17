@@ -2,10 +2,7 @@
 
 Use `docker build -t dialog/asterisk .` to create the image,
 
-Run the container with following:
-```
-./run
-```
+Run the container with `./run`
 
 To create your own certificates
 ```
