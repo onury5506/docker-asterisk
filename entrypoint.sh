@@ -1,3 +1,4 @@
 #!/bin/bash
-sed -i "s/EXTERN_IP/$EXTERN_IP/g" /etc/asterisk/sip.conf
+#sed -i "s/EXTERN_IP/$EXTERN_IP/g" /etc/asterisk/sip.conf
+nginx
 asterisk -vvvvvvvvvvvvvvvvvc

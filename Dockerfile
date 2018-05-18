@@ -56,13 +56,16 @@ RUN cd asterisk-15.4.0 && \
     make && \
     make install
 
+RUN yum -y install nginx
+
 RUN yum clean all
 
 EXPOSE \
     8089/tcp \
+    443/tcp \
     10000-10010/tcp \
-    10000-10010/udp
-
+    10000-10010/udp 
+    
 # config
 COPY pjsip.conf /etc/asterisk/pjsip.conf
 COPY http.conf /etc/asterisk/http.conf
@@ -70,6 +73,7 @@ COPY rtp.conf /etc/asterisk/rtp.conf
 COPY modules.conf /etc/asterisk/modules.conf
 COPY extensions.conf /etc/asterisk/extensions.conf
 COPY keys /etc/asterisk/keys
+COPY nginx.conf /etc/nginx/nginx.conf
 
 # entrypoint
 COPY entrypoint.sh /
