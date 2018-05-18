@@ -28,7 +28,7 @@ Try with https://www.doubango.org/sipml5/call.htm using
 | Field | Value |
 | --- | --- |
 | Disable Video |true |
-| WebSocket Server URL | wss://DOCKER_IP_ADDRESS:8089/ws |
+| WebSocket Server URL | wss://DOCKER_IP_ADDRESS |
 | ICE Servers | [{url: 'stun://stun.l.google.com:19302'}] |
 
 ### Call control
