@@ -1,7 +1,5 @@
 FROM centos:7
 
-MAINTAINER Boris Maslakov <b.maslakov@dlg.im>
-
 # update and epel-release
 RUN yum -y update && yum -y install epel-release
 
@@ -9,7 +7,10 @@ RUN yum -y update && yum -y install epel-release
 RUN yum -y install wget \
                    net-tools \
                    ns \
-                   vim
+                   vim \
+                   mc \
+                   nc \
+                   tcpdump
 
 # asterisk dependencies
 RUN yum -y install autoconf \
@@ -30,15 +31,15 @@ RUN yum -y install autoconf \
 
 WORKDIR /usr/src
 
-RUN wget http://downloads.asterisk.org/pub/telephony/asterisk/releases/asterisk-14.6.1.tar.gz && \
-    tar -zxvf asterisk-14.6.1.tar.gz
+RUN wget http://downloads.asterisk.org/pub/telephony/asterisk/releases/asterisk-19.3.1.tar.gz && \
+    tar -zxvf asterisk-19.3.1.tar.gz
 
-RUN cd asterisk-14.6.1/contrib/scripts/ && \
+RUN cd asterisk-19.3.1/contrib/scripts/ && \
     ./install_prereq install && \
     ./install_prereq install-unpackaged
 
-RUN cd asterisk-14.6.1 && \
-    ./configure && \
+RUN cd asterisk-19.3.1 && \
+    ./configure --with-jansson-bundled && \
     make menuselect.makeopts && \
     menuselect/menuselect --disable BUILD_NATIVE \
                           --enable chan_pjsip \
